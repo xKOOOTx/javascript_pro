@@ -1,0 +1,52 @@
+$colorWhite: #fff
+$colorBlack: #000
+$colorGrey: #CCCCCC
+*
+  margin: 0
+  padding: 0
+
+header
+  border: 1px solid black
+  display: flex
+  padding: 20px
+  flex-direction: row-reverse
+  align-items: center
+
+.btn-cart, .by-btn
+  background-color: $colorWhite
+  outline: none
+  border: 1px solid black
+  padding: 5px 15px
+  border-radius: 20px
+  cursor: pointer
+
+
+  &:hover
+    background-color: $colorGrey
+    color: $colorWhite
+
+.products
+  outline: 1px solid black
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-content: center
+
+.product-item
+  outline: 1px solid black
+  padding: 10px
+  justify-content: center
+
+  h3, p
+    padding: 10px 0
+    text-align: center
+
+  .by-btn
+    margin-left: 115px
+    margin-top: 20px
+
+
+
+
+
+
