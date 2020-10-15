@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+</head>
+<body>
+<!--insertAdjacentHTML-->
+<!--beforebegin-->
+<p>
+<!--afterbegin-->
+    <span></span>
+<!--beforeend-->
+</p>
+<!--afterend-->
+<script>
+    // ES5
+    // var user = {
+    //     name: 'Ann',
+    //     yearOfBirth: 1990,
+    //     methodOne: function () {
+    //
+    //     },
+    // };
+
+    // function Person(name, yearOfBirth) {
+    //     this.name = name;
+    //     this.yearOfBirth = yearOfBirth;
+    // }
+    //
+    // Person.prototype.calcAge = function () {
+    //     return new Date().getFullYear() - this.yearOfBirth;
+    // }
+    //
+    // function Teacher(name, yearOfBirth, subject) {
+    //     Person.call(this, name, yearOfBirth);
+    //     // Person.apply(this, [name, yearOfBirth]);
+    //     this.subject = subject;
+    // }
+    //
+    // Teacher.prototype = Object.create(Person.prototype);
+    // Teacher.prototype.constructor = Teacher;
+    //
+    // Teacher.prototype.foo = function () {
+    //     return 'foo';
+    // }
+    //
+    // const john = new Person('John', 1985);
+    // const ann = new Teacher('Ann', 1990, 'Math');
+
+    // ES6
+    class Person {
+        constructor(name, yearOfBirth) {
+            this.name = name;
+            this.yearOfBirth = yearOfBirth;
+        }
+        calcAge() {
+            return new Date().getFullYear() - this.yearOfBirth;
+        }
+        sayHi() {
+            return `${this.name} says "Hi!"`;
+        }
+    }
+
+    class Teacher extends Person {
+        constructor(name, yearOfBirth, subject) {
+            super(name, yearOfBirth);
+            this.subject = subject;
+        }
+        foo() {
+            return 'foo';
+        }
+        sayHi() {
+            return `${super.sayHi()} to students`;
+        }
+        static triple(x) {
+            if (!x) x = 2;
+            return x * 3;
+        }
+    }
+
+    const john = new Person('John', 1985);
+    const ann = new Teacher('Ann', 1990, 'Math');
+</script>
+</body>
+</html>
