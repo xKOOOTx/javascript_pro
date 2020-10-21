@@ -63,6 +63,8 @@ class ProductItem {
 const list = new ProductList();
 
 
+
+
 /*class GoodsItem {
   constructor(title, price) {
     this.title = title;
