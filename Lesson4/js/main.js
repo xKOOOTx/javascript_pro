@@ -260,5 +260,17 @@ const listContext = {
   Cart: CartItem
 };
 
+let quotesRemover = () => {
+  // document.querySelector('.text__block_btn').addEventListener('click')
+  const textBlock = document.querySelector('.text__block');
+  const textContent = textBlock.textContent;
+  // const replace = textContent.replace(/ '|' |\B'/g, '"');
+  const replace = textContent.replace(/\B'|'\B/g, '"');
+  // const replaceNew = replace.replace(/' |\<br>/g,'$');
+  console.log(replace);
+}
+quotesRemover();
+
 let cart = new Cart();
 let products = new ProductsList(cart);
+

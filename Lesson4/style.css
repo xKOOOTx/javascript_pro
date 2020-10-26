@@ -1,0 +1,115 @@
+body {
+    display: grid;
+    justify-content: center;
+}
+
+.text {
+    margin-top: 30px;
+}
+
+/*.invisible {*/
+/*    display: none;*/
+/*}*/
+.form__block {
+    margin-top: 50px;
+    width: 600px;
+    margin-bottom: 50px;
+}
+.form__block form {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.form__block input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    outline: none;
+    padding: 10px 0;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all .3s linear;
+}
+
+.form__block input:hover {
+    background-color: #fff;
+}
+
+.form__block input:focus {
+    background-color: #fff;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.form__block input::placeholder{
+    transition: all .3s linear;
+}
+.form__block input:focus::placeholder {
+    color: #ccc;
+}
+
+.form__block input::placeholder {
+    color: black;
+    padding-left: 10px;
+}
+
+.form__block span {
+    color: red;
+    font-size: small;
+}
+
+.form__block button {
+    margin: 10px 0;
+    width: 50.5%;
+    padding: 10px 0;
+    text-transform: capitalize;
+    background-color: #ccc;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all .3s linear;
+}
+
+.form__block button:hover {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.form__block button:active {
+    border: 1px solid #000;
+}
+
+textarea {
+    background-color: #ccc;
+    resize: vertical;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all .3s linear;
+}
+
+textarea::placeholder {
+    color: black;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+textarea:hover {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+textarea:focus {
+    background-color: #fff;
+    border: 1px solid #000;
+    outline: none;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+textarea:focus::placeholder {
+    color: #ccc;
+}
