@@ -11,18 +11,26 @@
     <header>
         <div class="logo">Интернет-магазин</div>
         <div class="cart">
-            <form action="#" class="search-form">
-                <input type="text" class="search-field">
+            <form @submit.prevent="filteredProduct" class="search-form">
+                <input type="text" class="search-field" v-model="searchLine">
                 <button class="btn-search" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
-            <button class="btn-cart" type="button">Корзина</button>
+            <button class="btn-cart" v-bind:class="{ active: isVisible }" type="button">Корзина</button>
+            <div class="cart-block" v-for="product of filteredProducts" :key="product.id_product">
+                <img :src="imgCatalog" alt="some img">
+                <div class="cart-item">
+                    <h3>{{product.product_name}}</h3>
+                    <p>{{product.price}}₽</p>
+                    <button class="del-btn">x</button>
+                </div>
+            </div>
         </div>
     </header>
     <main>
         <div class="products">
-            <div class="product-item" v-for="product of products" :key="product.id_product">
+            <div class="product-item" v-for="product of filteredProducts" :key="product.id_product">
                 <img :src="imgCatalog" alt="Some img">
                 <div class="desc">
                     <h3>{{product.product_name}}</h3>
