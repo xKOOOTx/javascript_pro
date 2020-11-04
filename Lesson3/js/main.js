@@ -16,6 +16,8 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
   xhr.send();
 };*/
 
+// Новый вариант
+
 /*let getRequest = (url) => {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
