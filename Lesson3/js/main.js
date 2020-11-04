@@ -16,11 +16,11 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
   xhr.send();
 };*/
 
-/*let Promise= () => {
-  let xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.onreadystatechange = () => {
-    return new Promise((resolve, reject) => {
+/*let getRequest = (url) => {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = () => {
       if(xhr.readyState === 4) {
         if (xhr.status !== 200) {
           console.log('Error');
@@ -28,10 +28,10 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
           reject(xhr.responseText);
         }
       }
-    });
+    };
     xhr.send();
-  }
-}*/
+  })
+};*/
 
 // –--------------------------------
 
