@@ -2,11 +2,8 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 
 const app = new Vue({
     el: '#app',
-    data: {
-        userSearch: '',
-    },
     methods: {
-        getJson(url){
+        getJson(url) {
             return fetch(url)
                 .then(result => result.json())
                 .catch(error => {
@@ -21,9 +18,9 @@ const app = new Vue({
                 },
                 body: JSON.stringify(data)
             }).then(result => result.json())
-              .catch(error => {
-                  this.$refs.error.setError(error);
-              });
+                .catch(error => {
+                    this.$refs.error.setError(error);
+                });
         },
         putJson(url, data) {
             return fetch(url, {
@@ -33,25 +30,21 @@ const app = new Vue({
                 },
                 body: JSON.stringify(data)
             }).then(result => result.json())
-              .catch(error => {
-                  this.$refs.error.setError(error);
-              });
+                .catch(error => {
+                    this.$refs.error.setError('Не кликай так быстро - сломаешь!');
+                });
         },
-        deleteJson(url, data) {
+        deleteJson(url) {
             return fetch(url, {
                 method: 'DELETE',
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(data)
             }).then(result => result.json())
-              .catch(error => {
-                  this.$refs.error.setError(error);
-              });
+                .catch(error => {
+                    this.$refs.error.setError(error);
+                });
         },
     },
-    mounted() {
-        console.log(this);
-    }
 });
 

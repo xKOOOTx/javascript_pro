@@ -2,7 +2,7 @@ Vue.component('cart', {
     data(){
       return {
           imgCart: 'https://placehold.it/50x100',
-          cartUrl: '/getBasket.json',
+          // cartUrl: '/getBasket.json',
           cartItems: [],
           showCart: false,
       }
@@ -24,16 +24,21 @@ Vue.component('cart', {
             }
         },
         remove(item) {
-            this.$parent.getJson(`${API}/deleteFromBasket.json`)
-                .then(data => {
-                    if(data.result === 1) {
-                        if(item.quantity>1){
+            if (item.quantity > 1) {
+                this.$parent.putJson(`/api/cart/${item.id_product}`, {quantity: -1})
+                    .then(data => {
+                        if (data.result === 1) {
                             item.quantity--;
-                        } else {
-                            this.cartItems.splice(this.cartItems.indexOf(item), 1)
                         }
-                    }
-                })
+                    });
+            } else {
+                this.$parent.deleteJson(`/api/cart/${item.id_product}`)
+                    .then(data => {
+                        if (data.result === 1) {
+                            this.cartItems.splice(this.cartItems.indexOf(item), 1);
+                        }
+                    });
+            }
         },
     },
     mounted(){
@@ -63,7 +68,7 @@ Vue.component('cart', {
 Vue.component('cart-item', {
     props: ['cartItem', 'img'],
     template: `
-                <div class="cart-item">
+            <div class="cart-item">
                 <div class="product-bio">
                     <img :src="img" alt="Some image">
                     <div class="product-desc">
