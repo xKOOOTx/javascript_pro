@@ -33,7 +33,6 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
   })
 };*/
 
-
 // –--------------------------------
 
 class ProductList {

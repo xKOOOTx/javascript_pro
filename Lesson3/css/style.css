@@ -12,9 +12,12 @@ button{
     outline: none;
 }
 .logo{
-
     text-transform: uppercase;
     font-weight: bold;
+}
+.summary {
+    display: inline-flex;
+    font-size: 25px;
 }
 .btn-cart{
     background-color: #fafafa;
