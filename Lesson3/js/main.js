@@ -16,9 +16,7 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
   xhr.send();
 };*/
 
-// Новый вариант
-
-/*let getRequest = (url) => {
+/*let getRequest = (url) => {                     //Переименовал переменную с зарезервированного Promise на
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
