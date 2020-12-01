@@ -1,8 +1,8 @@
 Vue.component("cart", {
   data() {
     return {
-      imgCart: "https://placehold.it/50x100",
       cartUrl: "/getBasket.json",
+      imgCart: "https://placehold.it/50x100",
       cartItems: [],
       showCart: false,
     };
@@ -45,19 +45,19 @@ Vue.component("cart", {
     });
   },
   template: `
-    <div>
-        <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
-        <div class="cart-block" v-show="showCart">
-            <p v-if="!cartItems.length">Корзина пуста</p>
-            <cart-item class="cart-item" 
-            v-for="item of cartItems" 
-            :key="item.id_product"
-            :cart-item="item" 
-            :img="imgCart"
-            @remove="remove">
-            </cart-item>
-        </div>
-    </div>`,
+        <div>
+            <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
+            <div class="cart-block" v-show="showCart">
+                <p v-if="!cartItems.length">Корзина пуста</p>
+                <cart-item class="cart-item" 
+                v-for="item of cartItems" 
+                :key="item.id_product"
+                :cart-item="item" 
+                :img="imgCart"
+                @remove="remove">
+                </cart-item>
+            </div>
+        </div>`,
 });
 
 Vue.component("cart-item", {
