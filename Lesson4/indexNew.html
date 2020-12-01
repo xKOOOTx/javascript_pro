@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="text center">
+    <div class="text__block">
+            One: 'Hi Mary.' Two: 'Oh, hi.'<br>
+            One: 'How are you doing?'<br>
+            Two: 'I'm doing alright. How about you?'<br>
+            One: 'Not too bad. The weather is great isn't it?'<br>
+            Two: 'Yes. It's absolutely beautiful today.'<br>
+            One: 'I wish it was like this more frequently.'<br>
+            Two: 'Me too.'<br>
+            One: 'So where are you going now?'<br>
+            Two: 'I'm going to meet a friend of mine at the department store'<br>
+            One: 'Going to do a little shopping?'<br>
+            Two: 'Yeah, I have to buy some presents for my parents.'<br>
+            One: 'What's the occasion?'<br>
+            Two: 'It's their anniversary.'<br>
+            One: 'That's great. Well, you better get going. You don't want to be late.'<br>
+            Two: 'I'll see you next time.'<br>
+            One: 'Sure.' Bye.'<br>
+    </div>
+    <button id="text-btn">Форматировать</button>
+    <button id="undo-btn">Отменить форматирование</button>
+</div>
+<div class="form__block">
+    <form class="form" action="#">
+        <input required type="name" class="nameValidation" placeholder="Ваше имя"><br><span class="invisible">Имя должно содержать только буквы</span><br>
+        <input required type="tel" class="telValidation" placeholder="+7(123)456-78-90"><br><span class="invisible">Телефон имеет вид +7(123)456-78-90</span><br>
+        <input required type="email" class="emailValidation" placeholder="Ваш email"><br><span class="invisible">E-mail имеет вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru.</span><br>
+        <textarea name="" id="" cols="38" rows="10"  placeholder="Комментарии"></textarea><br>
+<!--        <input type="text" placeholder="Комментарии">-->
+        <button id="submit">отправить</button>
+    </form>
+</div>
+<script>
+    'use strict'
+    /*const str = document.querySelector('.text__block').textContent;
+    const regExp = /\B'|'\B/g;
+    const editedText = str.replace(regExp, '"');
+    document.querySelector('.text__block').textContent = editedText;*/
+
+
+    // const str = document.querySelector('.text__block').textContent;
+
+
+    const regExp = /\B'|'\B/g;
+    const symbols = '"';
+    function replaceSymbols(label, text) {
+        document.body.innerHTML = document.body.innerHTML.replace(label, text);
+    }
+
+    const button = document.getElementById('text-btn');
+    button.addEventListener('click', () => {
+        replaceSymbols(regExp,symbols);
+    });
+
+    const backRegExp = /\B"|"\B/g;
+    const anotherSymbols = "'";
+    function backReplaceSymbols(label, text) {
+        document.body.innerHTML = document.body.innerHTML.replace(label, text);
+    }
+
+    const anotherButton = document.getElementById('undo-btn');
+    anotherButton.addEventListener('click', () => {
+        console.log(backReplaceSymbols(backRegExp, anotherSymbols));
+    });
+
+
+
+
+</script>
+<script>
+    const validateBtn = document.querySelector('.form__block #submit');
+    console.log(validateBtn);
+
+    const form = document.querySelector('.form__block')
+    form.addEventListener('submit', function () {
+        console.log('clicked on validate')
+    })
+
+    const nameCheck = form.querySelector('.nameValidation');
+    const telCheck = form.querySelector('.telValidation');
+    const emailCheck = form.querySelector('.emailValidation');
+</script>
+
+</body>
+</html>
